@@ -19,4 +19,14 @@ contract polleria259172 {
         posicion = _posicion;
         direccion = msg.sender;
     }
+
+    function agregarElemento(uint256 _id, string memory _nombre, uint256 _precio, string memory _tipo) public {
+        platos.push(Plato(_id, _nombre, _precio, _tipo));
+    }
+    function contarElementos() public view returns (uint256) {
+        return platos.length;
+    }
+        function cambiarDireccion(address _direccion) public {
+        direccion = _direccion;
+    }
 }
